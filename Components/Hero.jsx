@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/autoplay";
 import Clients from "@/components/Clients";
+import Link from "next/link";
 
 const HeroSection = () => {
   const heroImages = Array.from({ length: 10 }, (_, i) => `/images/hero/hero (${i + 1}).jpg`);
@@ -18,9 +19,9 @@ const HeroSection = () => {
           <h2 className="hero-two__title">Unleash the Power of AI</h2>
           <p className="hero-two__title-2">Transforming Businesses with Intelligent Solutions</p>
           <div className="hero-two__button" style={{ marginBottom: "30px" }}>
-            <a href="/about" className="aigence-btn">
+            <Link href="/contact" className="aigence-btn">
                 <span className="aigence-btn__text">Get In Touch</span>
-            </a>
+            </Link>
             </div>
         </div>
       </div>

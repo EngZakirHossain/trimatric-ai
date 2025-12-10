@@ -1,5 +1,6 @@
 import HeaderBreadcrumb from "@/Components/HeaderBreadcrumb";
 import Clients from "@/components/Clients";
+import { FaArrowRight, FaPhone, FaEnvelope, FaMapMarkerAlt,FaClock } from "react-icons/fa";
 const Contact = () => {
     return <>
         <HeaderBreadcrumb pageTitle="Contact" />
@@ -15,17 +16,15 @@ const Contact = () => {
                 <div className="contact-info__card">
                     <div className="contact-info__icon-box">
                     <span className="contact-info__icon">
-                        <i className="icon-location-2" />
+                        <FaMapMarkerAlt  size={24} color="#35a6ed" title="Phone" />
                     </span>
                     </div>
                     <h3 className="contact-info__title">Our Address</h3>
                     <p className="contact-info__text">
-                    4517 Washington Ave. Manchester, <br /> Kentucky 39495
+                        125 Ramna Century Avenue, Boro Moghbazar, Dhaka-1217 Bangladesh
                     </p>
                 </div>
-                {/* /.contact-info__card */}
                 </div>
-                {/* /.col-xl-3 col-md-6 */}
                 <div
                 className="col-xl-3 col-md-6 wow fadeInUp"
                 data-wow-duration="1500ms"
@@ -34,17 +33,15 @@ const Contact = () => {
                 <div className="contact-info__card">
                     <div className="contact-info__icon-box">
                     <span className="contact-info__icon">
-                        <i className="icon-email-2" />
+                        <FaEnvelope  size={24} color="#35a6ed" title="Phone" />
                     </span>
                     </div>
-                    <h3 className="contact-info__title">info@exmple.com</h3>
+                    <h3 className="contact-info__title">info@trimatric.ai</h3>
                     <p className="contact-info__text">
-                    Email us anytime for any kind <br /> ofquety.
+                        Email us anytime for any kind <br /> of Query.
                     </p>
                 </div>
-                {/* /.contact-info__card */}
                 </div>
-                {/* /.col-xl-3 col-md-6 */}
                 <div
                 className="col-xl-3 col-md-6 wow fadeInUp"
                 data-wow-duration="1500ms"
@@ -53,17 +50,15 @@ const Contact = () => {
                 <div className="contact-info__card">
                     <div className="contact-info__icon-box">
                     <span className="contact-info__icon">
-                        <i className="icon-phone-3" />
+                        <FaPhone  size={24} color="#35a6ed" title="Phone" />
                     </span>
                     </div>
-                    <h3 className="contact-info__title">Hot: +208-666-01112</h3>
+                    <h3 className="contact-info__title">+880 1886-636200</h3>
                     <p className="contact-info__text">
-                    24/7/365 priority Live Chat and <br /> ticketing support.
+                        24/7/365 priority Call and <br /> support.
                     </p>
                 </div>
-                {/* /.contact-info__card */}
                 </div>
-                {/* /.col-xl-3 col-md-6 */}
                 <div
                 className="col-xl-3 col-md-6 wow fadeInUp"
                 data-wow-duration="1500ms"
@@ -72,31 +67,20 @@ const Contact = () => {
                 <div className="contact-info__card">
                     <div className="contact-info__icon-box">
                     <span className="contact-info__icon">
-                        <i className="icon-clock" />
+                        <FaClock  size={24} color="#35a6ed" title="Phone" />
                     </span>
                     </div>
                     <h3 className="contact-info__title">Opening Hour</h3>
                     <p className="contact-info__text">
-                    <span>Sunday-Fri: 9AM – 6PM</span> <br />
-                    <span>Saturday: 9AM – 4M</span>
+                    <span>Saturday-Friday: 10AM – 6PM</span> <br />
+                    <span>Close On Government Holiday</span>
                     </p>
                 </div>
-                {/* /.contact-info__card */}
                 </div>
-                {/* /.col-xl-3 col-md-6 */}
             </div>
-            {/* /.row */}
             </div>
-            {/* /.container */}
         </section>
-        {/* /.contact-info */}
         <section className="contact-one  section-space-bottom">
-            <div
-            className="contact-one__bg"
-            style={{
-                backgroundImage: "url(assets/images/shapes/contact-bg-shape-1-1.png)"
-            }}
-            />
             <div className="container">
             <div
                 className="contact-one__content wow fadeInUp"
@@ -105,7 +89,6 @@ const Contact = () => {
                 <h2 className="sec-title sec-title--center">
                 Feel Free to Write us Anytime
                 </h2>
-                {/* /.sec-title */}
                 <form
                 className="contact-one__form contact-form-validated form-one"
                 action="inc/sendemail.php"
@@ -119,7 +102,6 @@ const Contact = () => {
                         placeholder="Your Name"
                     />
                     </div>
-                    {/* /.form-one__control */}
                     <div className="form-one__control">
                     <input
                         id="email"
@@ -128,11 +110,9 @@ const Contact = () => {
                         placeholder="Email Address"
                     />
                     </div>
-                    {/* /.form-one__control */}
                     <div className="form-one__control">
                     <input id="phone" type="tel" name="phone" placeholder="Phone" />
                     </div>
-                    {/* /.form-one__control */}
                     <div className="form-one__control">
                     <input
                         id="subject"
@@ -141,7 +121,6 @@ const Contact = () => {
                         placeholder="Subject"
                     />
                     </div>
-                    {/* /.form-one__control */}
                     <div className="form-one__control form-one__control--full">
                     <textarea
                         id="message"
@@ -150,25 +129,18 @@ const Contact = () => {
                         defaultValue={""}
                     />
                     </div>
-                    {/* /.form-one__control */}
                     <div className="form-one__control form-one__control--full text-center">
                     <button type="submit" className="aigence-btn aigence-btn--black">
                         <span className="aigence-btn__text">Send a Message</span>
                         <span className="aigence-btn__icon">
-                        <i className="icon-right-arrow" />
+                        <FaArrowRight size={30} color="#FFFFFF" />
                         </span>
                     </button>
-                    {/* /.aigence-btn */}
                     </div>
-                    {/* /.form-one__control */}
                 </div>
-                {/* /.form-one__group */}
                 </form>
-                {/* /.contact-one__form */}
             </div>
-            {/* /.contact-one__content */}
             </div>
-            {/* /.container */}
         </section>
         <div className="container mt-5 section-space-bottom">
             <div className="client-carousel__content">
