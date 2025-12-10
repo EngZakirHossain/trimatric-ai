@@ -1,6 +1,7 @@
+import { FaArrowRight } from "react-icons/fa";
 const Blog = () => {
     return <>
-  <section className="blog-one section-space">
+  <section className="blog-one section-space-bottom">
     <div className="container">
       <h2 className="sec-title sec-title--center bw-split-in-left">
         Recent Updates &amp; <br /> Insights from our Blog
@@ -52,7 +53,7 @@ const Blog = () => {
               </p>
               <a href="blog-details-right.html" className="blog-card__btn">
                 <span className="blog-card__btn__icon">
-                  <i className="icon-right-arrow" />
+                  <FaArrowRight size={30} color="#35a6ed" />
                 </span>
               </a>
             </div>
@@ -104,7 +105,7 @@ const Blog = () => {
               </p>
               <a href="blog-details-right.html" className="blog-card__btn">
                 <span className="blog-card__btn__icon">
-                  <i className="icon-right-arrow" />
+                  <FaArrowRight size={30} color="#35a6ed" />
                 </span>
               </a>
             </div>
@@ -156,7 +157,7 @@ const Blog = () => {
               </p>
               <a href="blog-details-right.html" className="blog-card__btn">
                 <span className="blog-card__btn__icon">
-                  <i className="icon-right-arrow" />
+                  <FaArrowRight size={30} color="#35a6ed" />
                 </span>
               </a>
             </div>

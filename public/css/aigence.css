@@ -421,16 +421,16 @@ h6 {
 }
 
 .section-space-bottom {
-  padding-bottom: var(--section-space, 120px);
+  padding-bottom: var(--section-space, 80px);
 }
 @media (max-width: 767px) {
   .section-space-bottom {
-    padding-bottom: 100px;
+    padding-bottom: 60px;
   }
 }
 @media (max-width: 575px) {
   .section-space-bottom {
-    padding-bottom: 80px;
+    padding-bottom: 40px;
   }
 }
 
@@ -9343,7 +9343,6 @@ li:hover .sidebar__comments__icon::after {
 .testimonials-two {
   position: relative;
   padding-bottom: 244px;
-  background-color: var(--aigence-border-color, #E6EAFF);
 }
 @media (max-width: 767px) {
   .testimonials-two {
@@ -12803,7 +12802,6 @@ li:hover .sidebar__comments__icon::after {
   left: 50%;
   border-radius: 50px 50px 0px 0px;
   transform: translateX(-50%);
-  background: linear-gradient(180deg, rgba(230, 234, 255, 0.4) 0%, rgba(217, 48, 170, 0) 100%);
 }
 @media (max-width: 1799px) {
   .services-two::after {
