@@ -1,6 +1,14 @@
+"use client";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin,FaPinterest,FaYoutube,FaPhone, FaEnvelope, FaMapMarkerAlt    } from "react-icons/fa";
+import { useSite } from "@/app/context/SiteContext";
 import Link from "next/link";
+import Image from "next/image";
+
 const Footer = () => {
+
+    const site = useSite();
+    if (!site) return null;
+
     return <>
     <footer className="main-footer main-footer--two">
         <div
@@ -18,13 +26,16 @@ const Footer = () => {
                 data-wow-delay="00ms"
             >
                 <div className="footer-widget footer-widget--about">
-                <a href="index.html" className="footer-widget__logo logo-retina">
-                    <img
-                    src="/images/logo.png"
-                    alt="Aigence HTML Template"
-                    width={150}
+                <Link href="/" className="footer-widget__logo logo-retina">
+                    <Image
+                        src={site?.logo || "images/logo.png"}
+                        alt={site?.name || "Trimatric AI"}
+                        width={150}
+                        height={50}
+                        className="object-contain"
+                        unoptimized
                     />
-                </a>
+                </Link>
                 </div>
             </div>
             <div
@@ -35,23 +46,14 @@ const Footer = () => {
                 <div className="footer-widget footer-widget--social">
                 <h3 className="footer-widget__social-title">Get in Touch</h3>
                 <div className="social-links" style={{ display: "flex", gap: "10px" }}>
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                    <a href={site.fb_link} target="_blank" rel="noopener noreferrer">
                         <FaFacebook size={24} color="#1877F2" title="Facebook" />
-                    </a>
-                    <a href="https://x.com" target="_blank" rel="noopener noreferrer">
-                        <FaTwitter size={24} color="#1DA1F2" title="Twitter X" />
-                    </a>
-                    <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">
-                        <FaPinterest size={24} color="#E60023" title="Pinterest" />
-                    </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                        <FaInstagram size={24} color="#E4405F" title="Instagram" />
-                    </a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-                        <FaYoutube size={24} color="#FF0000" title="YouTube" />
-                    </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                    </a>                    
+                    <a href={site.linkedin_link} target="_blank" rel="noopener noreferrer">
                         <FaLinkedin size={24} color="#0077B5" title="LinkedIn" />
+                    </a>
+                    <a href={site.youtube_link} target="_blank" rel="noopener noreferrer">
+                        <FaYoutube size={24} color="#FF0000" title="YouTube" />
                     </a>
                 </div>
                 </div>
@@ -68,8 +70,8 @@ const Footer = () => {
                         <FaEnvelope  size={24} color="#FF4D4D" title="Email" />
                     </span>
                     <span>
-                        <a href="mailto:info@trimatric.ai">
-                            info@trimatric.ai
+                        <a href={`mailto:${site.email}`}>
+                            {site.email}
                         </a>
                     </span>
                     </li>
@@ -78,7 +80,7 @@ const Footer = () => {
                         <FaPhone size={24} color="#FF0000" title="YouTube" />
                     </span>
                     <span>
-                        <a href="tel:+880 1886-636200">+880 1886-636200</a>
+                        <a href={`tel:${site.phone}`}>{site.phone}</a>
                     </span>
                     </li>
                     <li>
@@ -86,7 +88,7 @@ const Footer = () => {
                         <FaMapMarkerAlt  size={24} color="#FF4D4D" title="Location" />
                     </span>
                     <span>
-                        <p>125 Ramna Century Avenue, Boro Moghbazar, Dhaka-1217 Bangladesh</p>
+                        <p>{site.address}</p>
                     </span>
                     </li>
                 </ul>
@@ -124,7 +126,7 @@ const Footer = () => {
                     <Link href="/services">Our Services</Link>
                     </li>
                     <li>
-                    <a href="projects.html">Recent Projects</a>
+                    <a href="/projects">Recent Projects</a>
                     </li>                    
                     <li>
                     <Link href="/contact">Contact</Link>
@@ -162,7 +164,7 @@ const Footer = () => {
         <div className="container">
             <div className="main-footer__bottom__inner">
             <p className="main-footer__copyright">
-                © Copyright <span className="dynamic-year" /> By Trimatric Architech.
+                ©{new Date().getFullYear()} Copyright By Trimatric Architech.
             </p>
             </div>
         </div>

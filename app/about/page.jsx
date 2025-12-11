@@ -12,19 +12,19 @@ const About = () => {
                 <div className="about-four__image">
                     <div className="about-four__image__left">
                     <img
-                        src="assets/images/about/about-4-1.jpg"
+                        src="/images/hero/hero (1).jpg"
                         alt="about"
                         className="about-four__image__1"
                     />
                     <img
-                        src="assets/images/about/about-4-2.jpg"
+                        src="/images/hero/hero (1).jpg"
                         alt="about"
                         className="about-four__image__2"
                     />
                     <div className="about-four__circle">
                         <div className="about-four__circle__logo">
                         <img
-                            src="assets/images/shapes/about-award-4-1.png"
+                            src="/images/logo.png"
                             alt="award"
                         />
                         </div>
@@ -41,44 +41,39 @@ const About = () => {
                         </div>
                         </div>
                     </div>
-                    {/*/.curved-circle end*/}
                     </div>
-                    {/* /.about-four__image__left */}
                     <div className="about-four__image__right">
                     <img
-                        src="assets/images/about/about-4-3.jpg"
+                        src="/images/hero/hero (1).jpg"
                         alt="about"
                         className="about-four__image__3"
                     />
                     </div>
-                    {/* /.about-four__image__right */}
                 </div>
-                {/* /.about-four__image */}
                 </div>
-                {/* /.col-lg-6 */}
                 <div className="col-lg-6">
                 <div className="about-four__content">
                     <h2 className="sec-title bw-split-in-left">
-                    The Advantages Of Collaborating With An AI Agency
+                    About Trimatric AI
                     </h2>
-                    {/* /.sec-title */}
                     <h3
                     className="about-four__title wow fadeInUp"
                     data-wow-duration="1500ms"
                     >
                     AI agencies may assist in developing AI-driven products
                     </h3>
-                    {/* /.about-four__title */}
                     <p
                     className="about-four__text wow fadeInUp"
                     data-wow-duration="1500ms"
                     >
-                    An AI agency is a business or organization that specializes in
-                    leveraging artificial intelligence to provide solutions and
-                    services to clients. These agencies typically offer expertise in
-                    areas like machine learning.
+                    TRIMATRIC AI is a forward-thinking technology company focused on developing cutting-edge artificial intelligence-based
+                     software and solutions. With a mission to drive digital transformation, we provide tailored AI-driven services across various sectors,
+                      revolutionizing industries with intelligent automation, data analytics, and advanced machine learning solutions.
+
+                      Our expertise extends to large-scale surveillance and road safety projects, where we integrate sophisticated AI systems to enhance public
+                       safety, optimize traffic management, and ensure seamless urban mobility. With our innovative solutions, we aim to contribute to the
+                        creation of smarter, safer cities.
                     </p>
-                    {/* /.about-four__text */}
                     <div className="row gutter-y-30">
                     <div
                         className="col-xl-6 col-lg-12 col-md-6 wow fadeInUp"
@@ -93,19 +88,18 @@ const About = () => {
                             </span>
                             </div>
                             <h4 className="about-four__item__title">
-                            Innovate <br /> with AI
+                            Our Mission
                             </h4>
                         </div>
-                        {/* /.about-four__item__top */}
                         <p className="about-four__item__text">
-                            Utilize AI tools to analyze customer behavior, improve
-                            customer sales.
+                            Deliver Intelligent Security Solutions
+                            Empower Data-Driven Decisions
+                            Optimize Operations through Automation
+                            Innovate Management Software
+                            Lead Future-Driven AI Innovation
                         </p>
-                        {/* /.about-four__item__text */}
                         </div>
-                        {/* /.about-four__item */}
                     </div>
-                    {/* /.col-xl-6 */}
                     <div
                         className="col-xl-6 col-lg-12 col-md-6 wow fadeInUp"
                         data-wow-duration="1500ms"
@@ -119,48 +113,25 @@ const About = () => {
                             </span>
                             </div>
                             <h4 className="about-four__item__title">
-                            Maximize Ai <br /> Impact
+                            Our Vision
                             </h4>
                         </div>
-                        {/* /.about-four__item__top */}
                         <p className="about-four__item__text">
-                            Prior to joining company, she spent 20+ years at Inmosys,
-                            where he.
+                            Our vision at Trimatric AI is to be a global brand in AI innovation, transforming the way businesses and communities
+                            operate with our intelligent security products, advanced business analytics, and automated management software.
+                            We aspire to shape a future where AI-driven solutions seamlessly integrate into daily operations, enhancing safety,
+                            efficiency, and decision-making. By pioneering future-driven AI technologies, we aim to empower organizations worldwide
+                            to thrive in an ever-evolving digital landscape and build a smarter, more secure world.
                         </p>
-                        {/* /.about-four__item__text */}
                         </div>
-                        {/* /.about-four__item */}
                     </div>
-                    {/* /.col-xl-6 */}
-                    </div>
-                    {/* /.row gutter-y-30 */}
-                    <div
-                    className="about-four__button wow fadeInUp"
-                    data-wow-duration="1500ms"
-                    >
-                    <a href="about.html" className="aigence-btn">
-                        <span className="aigence-btn__text">Discover More</span>
-                        <span className="aigence-btn__icon">
-                        <i className="icon-right-arrow" />
-                        </span>
-                    </a>
-                    {/* /.aigence-btn */}
-                    </div>
-                    {/* /.about-four__button */}
+                    </div>                    
                 </div>
-                {/* /.about-four__content */}
                 </div>
-                {/* /.col-lg-6 */}
             </div>
-            {/* /.row gutter-y-40 */}
             </div>
-        </section>
-         <div className="container mt-5 ">
-            <div className="client-carousel__content">
-                <h4 className="client-carousel__title">3500 happy customers</h4>
-            </div>
-            <Clients />
-        </div>
+        </section>        
+        <Clients />
         <Team/>
         <Testimonial/>
     </>

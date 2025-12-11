@@ -2,44 +2,26 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import { FaFacebookF, FaPinterestP, FaYoutube, FaXTwitter } from "react-icons/fa6";
+import { FaEnvelope, FaPhone, FaLinkedinIn } from "react-icons/fa6";
 import "swiper/css";
 import "swiper/css/pagination";
+import { useEffect, useState } from "react";
+import { fetchFromAPI } from "@/lib/api";
+import Image from "next/image";
 
 
 const Team = () => {
-    const teamMembers = [
-        {
-            name: "Annette Black",
-            role: "AI Agent",
-            image: "/images/team/Abrar.webp",
-        },
-        {
-            name: "Clara Ross",
-            role: "AI Agent",
-            image: "/images/team/Abrar.webp",
-        },
-        {
-            name: "Floyd Miles",
-            role: "AI Agent",
-            image: "/images/team/Abrar.webp",
-        },
-        {
-            name: "Guy Hawkins",
-            role: "AI Agent",
-            image: "/images/team/Abrar.webp",
-        },
-        {
-            name: "Theresa Webb",
-            role: "AI Agent",
-            image: "/images/team/Abrar.webp",
-        },
-        {
-            name: "Darrell Steward",
-            role: "AI Agent",
-            image: "/images/team/Abrar.webp",
-        },
-    ];
+    
+    const [teamMembers, setTeamMembers] = useState([]);
+    
+        useEffect(() => {
+            const loadTeamMembers = async () => {
+            const res = await fetchFromAPI("/teams");
+            setTeamMembers(res?.data || []);
+            };
+    
+            loadTeamMembers();
+        }, []);
 
     return (
         <>
@@ -60,7 +42,7 @@ const Team = () => {
                             992: { slidesPerView: 3 },
                         }}
                     >
-                        {teamMembers.map((m, index) => (
+                        {teamMembers.map((member, index) => (
                             <SwiperSlide key={index}>
                                 <div
                                     className="team-card wow fadeInUp"
@@ -70,44 +52,47 @@ const Team = () => {
                                     <div className="team-card__shape" />
 
                                     <div className="team-card__image">
-                                        <img src={m.image} alt={m.name} />
+                                        <Image width={400} height={400}  src={member.image} alt={member.name} unoptimized/>
                                     </div>
 
                                     <div className="team-card__social">
-                                        <span className="team-card__social__icon" />
+                                        <span className="team-card__social__icon" />                                       
 
                                         <div className="team-card__social__links social-links">
-                                            <a href="https://facebook.com">
+                                            {member.email && (
+                                                <a
+                                                href={`mailto:${member.email}`}
+                                                title={member.email}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                >
+                                                <FaEnvelope size={20} color="#1877F2" />
+                                                </a>
+                                            )}
+                                            {member.phone && (
+                                                <a
+                                                href={`tel:${member.phone}`}
+                                                title={member.phone}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                >
+                                                <FaPhone size={20} color="#1877F2" />
+                                                </a>
+                                            )}
+                                            {/* <a href="https://facebook.com">
                                                 <span className="social-links__icon">
-                                                    <FaFacebookF size={16} />
+                                                    <FaLinkedinIn size={16} />
                                                 </span>
-                                            </a>
-
-                                            <a href="https://x.com">
-                                                <span className="social-links__icon">
-                                                    <FaXTwitter size={16} />
-                                                </span>
-                                            </a>
-
-                                            <a href="https://pinterest.com">
-                                                <span className="social-links__icon">
-                                                    <FaPinterestP size={16} />
-                                                </span>
-                                            </a>
-
-                                            <a href="https://youtube.com">
-                                                <span className="social-links__icon">
-                                                    <FaYoutube size={16} />
-                                                </span>
-                                            </a>
+                                            </a> */}
+                                            
                                         </div>
                                     </div>
 
                                     <div className="team-card__info">
                                         <h3 className="team-card__name">
-                                            <a href="#">{m.name}</a>
+                                            <a href="#">{member.name}</a>
                                         </h3>
-                                        <p className="team-card__designation">{m.role}</p>
+                                        <p className="team-card__designation">{member.designation}</p>
                                     </div>
                                 </div>
                             </SwiperSlide>
@@ -115,8 +100,6 @@ const Team = () => {
                     </Swiper>
                 </div>
             </section>
-
-            {/* Marquee text section stays as it is */}
             <section className="slide-text slide-text--home1 ">
                 <div className="slide-text__wrapper">
                     <h1 className="slide-text__scroll">

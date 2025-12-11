@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: site.name || "Trimatric AI",
     description: site.address || "125 Ramna Century Avenue Boro Moghbazar, Dhaka-1217 Bangladesh",
-    icons: { icon: site.favicon || "/favicon.ico" },
+    icons: { icon: site.favicon || "/images/favicon.ico" },
     openGraph: {
       title: site.name,
       siteName: site.name,

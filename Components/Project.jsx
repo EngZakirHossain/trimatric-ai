@@ -3,47 +3,28 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { FaArrowRight } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { fetchFromAPI } from "@/lib/api";
+import Image from "next/image";
 import "swiper/css";
 
 const Project = () => {
-    const projects = [
-        {
-            img: "/images/hero/hero (1).jpg",
-            title: "Cyber Flame",
-            tag: "AI Portrait",
-        },
-        {
-            img: "/images/hero/hero (4).jpg",
-            title: "Robotic AI Body",
-            tag: "AI Design",
-        },
-        {
-            img: "/images/hero/hero (2).jpg",
-            title: "Virtual Dream",
-            tag: "VR Tech",
-        },
-        {
-            img: "/images/hero/hero (8).jpg",
-            title: "Future Vision",
-            tag: "Virtual Reality",
-        },
-        {
-            img: "/images/hero/hero (4).jpg",
-            title: "Neural Core",
-            tag: "Cyborg Tech",
-        },
-        {
-            img: "/images/hero/hero (5).jpg",
-            title: "Digital Human",
-            tag: "AI Research",
-        },
-    ];
+    const [projects, setProjects] = useState([]);
+    
+        useEffect(() => {
+            const loadProjects = async () => {
+            const res = await fetchFromAPI("/projects");
+            setProjects(res?.data || []);
+            };
+    
+            loadProjects();
+        }, []);
 
     return (
         <section className="projects-one section-space-2">
             <div className="container">
                 <h2 className="sec-title sec-title--center bw-split-in-left">
-                    Checkout Our Most <br /> Recent Work
+                    Checkout Our Most <br /> Recent Projects
                 </h2>
 
                 <Swiper
@@ -64,7 +45,7 @@ const Project = () => {
                         <SwiperSlide key={index}>
                             <div className="project-card" style={{ background: "transparent" }}>
                                 <div className="project-card__image">
-                                    <img src={p.img} alt={p.title} />
+                                    <Image src={p.cover_image} height={500} width={400} alt={p.title} unoptimized/>
                                 </div>
 
                                 <div className="project-card__content">
@@ -79,7 +60,7 @@ const Project = () => {
                                             <a href="project-details.html">{p.title}</a>
                                         </h3>
 
-                                        <p className="project-card__tagline">{p.tag}</p>
+                                        <p className="project-card__tagline">{p.category_name}</p>
                                     </div>
                                 </div>
                             </div>

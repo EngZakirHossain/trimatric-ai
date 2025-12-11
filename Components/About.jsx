@@ -1,4 +1,4 @@
-import { FaLaptopCode, FaPalette, FaPlay , FaBrain ,FaVideo  } from "react-icons/fa";
+import { FaLaptopCode, FaUsers, FaPlay , FaBrain ,FaVideo  } from "react-icons/fa";
 
 const About = () => {
 
@@ -9,7 +9,7 @@ const About = () => {
                 <div className="col-xxl-8 col-xl-7">
                 <div className="about-two__content">
                     <h2 className="sec-title bw-split-in-left">
-                    TRIMATRIC AI is a forward-thinking technology company developing cutting-edge AI-based software and solutions.
+                        Highlight the potential benefits of Neural Networks, such as improved decision-making, predictive analytics, and automation.
                     </h2>
                     <div className="about-two__item-grid">
                     <div
@@ -37,7 +37,7 @@ const About = () => {
                     >
                         <div className="about-two__item__top">
                         <span className="about-two__item__icon about-two__item__icon--2">
-                            <FaPalette size={30} color="#007bff" />
+                            <FaUsers size={30} color="#007bff" />
                         </span>
                         <h4 className="about-two__item__title">
                             Professional <br /> Team Members
