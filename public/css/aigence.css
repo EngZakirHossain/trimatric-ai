@@ -3928,6 +3928,11 @@ h6 {
   padding-top: 48.5px;
   padding-bottom: 48.5px;
 }
+.main-header--two .main-menu .main-menu__list > li.active > a {
+  color: #ffffff;
+  font-weight: 600;
+}
+
 .main-header--three .main-header__inner {
   border: none;
 }

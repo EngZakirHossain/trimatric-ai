@@ -15,7 +15,7 @@ const Blog = () => {
           >
             <div className="blog-card__image">
               <img
-                src="/images/Artboard 3.jpg"
+                src="/images/logo.png"
                 alt="10 Easy Strategies to Harness the Power of AI"
               />
               <a
@@ -31,7 +31,7 @@ const Blog = () => {
               <div className="blog-card__meta list-unstyle">
                 <div className="blog-card__admin">
                   <img
-                    src="/images/team/Mirshad.webp"
+                    src="/images/logo.png"
                     alt="Michale Smith"
                     className="blog-card__admin__image"
                   />
@@ -67,7 +67,7 @@ const Blog = () => {
           >
             <div className="blog-card__image">
               <img
-                src="/images/Artboard 3.jpg"
+                src="/images/logo.png"
                 alt="10 Easy Strategies to Harness the Power of AI"
               />
               <a
@@ -83,7 +83,7 @@ const Blog = () => {
               <div className="blog-card__meta list-unstyle">
                 <div className="blog-card__admin">
                   <img
-                    src="/images/team/Mirshad.webp"
+                    src="/images/logo.png"
                     alt="Michale Smith"
                     className="blog-card__admin__image"
                   />
@@ -119,7 +119,7 @@ const Blog = () => {
           >
             <div className="blog-card__image">
               <img
-                src="/images/Artboard 3.jpg"
+                src="/images/logo.png"
                 alt="10 Easy Strategies to Harness the Power of AI"
               />
               <a
@@ -135,7 +135,7 @@ const Blog = () => {
               <div className="blog-card__meta list-unstyle">
                 <div className="blog-card__admin">
                   <img
-                    src="/images/team/Mirshad.webp"
+                    src="/images/logo.png"
                     alt="Michale Smith"
                     className="blog-card__admin__image"
                   />

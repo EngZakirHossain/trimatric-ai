@@ -2,6 +2,7 @@ import HeaderBreadcrumb from "@/Components/HeaderBreadcrumb";
 import Clients from "@/components/Clients";
 import Team from "@/components/Team";
 import Testimonial from "@/components/Testimonial";
+import { FaBullseye, FaEye} from "react-icons/fa";
 const About = () => {
     return <>
         <HeaderBreadcrumb pageTitle="About Us" />
@@ -12,12 +13,12 @@ const About = () => {
                 <div className="about-four__image">
                     <div className="about-four__image__left">
                     <img
-                        src="/images/hero/hero (1).jpg"
+                        src="/images/about/1.webp"
                         alt="about"
                         className="about-four__image__1"
                     />
                     <img
-                        src="/images/hero/hero (1).jpg"
+                        src="/images/about/4.webp"
                         alt="about"
                         className="about-four__image__2"
                     />
@@ -44,7 +45,7 @@ const About = () => {
                     </div>
                     <div className="about-four__image__right">
                     <img
-                        src="/images/hero/hero (1).jpg"
+                        src="/images/about/3.webp"
                         alt="about"
                         className="about-four__image__3"
                     />
@@ -84,20 +85,20 @@ const About = () => {
                         <div className="about-four__item__top">
                             <div className="about-four__item__icon-box">
                             <span className="about-four__item__icon">
-                                <i className="icon-ai-network" />
+                                <FaBullseye  size={50} color="#35a6ed" title="Phone" />
                             </span>
                             </div>
                             <h4 className="about-four__item__title">
                             Our Mission
                             </h4>
                         </div>
-                        <p className="about-four__item__text">
-                            Deliver Intelligent Security Solutions
-                            Empower Data-Driven Decisions
-                            Optimize Operations through Automation
-                            Innovate Management Software
-                            Lead Future-Driven AI Innovation
-                        </p>
+                        <ul>
+                            <li>Deliver Intelligent Security Solutions</li>
+                            <li>Empower Data-Driven Decisions</li>
+                            <li>Optimize Operations through Automation</li>
+                            <li>Innovate Management Software</li>
+                            <li>Lead Future-Driven AI Innovation</li>
+                        </ul>
                         </div>
                     </div>
                     <div
@@ -109,20 +110,20 @@ const About = () => {
                         <div className="about-four__item__top">
                             <div className="about-four__item__icon-box">
                             <span className="about-four__item__icon">
-                                <i className="icon-ai-connectivity" />
+                                <FaEye  size={50} color="#35a6ed" title="Phone" />
                             </span>
                             </div>
                             <h4 className="about-four__item__title">
                             Our Vision
                             </h4>
                         </div>
-                        <p className="about-four__item__text">
-                            Our vision at Trimatric AI is to be a global brand in AI innovation, transforming the way businesses and communities
-                            operate with our intelligent security products, advanced business analytics, and automated management software.
-                            We aspire to shape a future where AI-driven solutions seamlessly integrate into daily operations, enhancing safety,
-                            efficiency, and decision-making. By pioneering future-driven AI technologies, we aim to empower organizations worldwide
-                            to thrive in an ever-evolving digital landscape and build a smarter, more secure world.
-                        </p>
+                            <ul>
+                                <li>Global AI innovation leader</li>
+                                <li>Intelligent security & analytics solutions</li>
+                                <li>AI-powered automation for efficiency</li>
+                                <li>Seamless AI integration into daily operations</li>
+                                <li>Building a smarter, safer digital future</li>
+                            </ul>
                         </div>
                     </div>
                     </div>                    

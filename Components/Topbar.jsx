@@ -3,10 +3,15 @@ import Link from "next/link";
 import { FaFacebookF, FaLinkedin,FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt    } from "react-icons/fa";
 import { useSite } from "@/app/context/SiteContext";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const TopBar = () => {
     const site = useSite();
     if (!site) return null;
+
+    const pathname = usePathname();
+
+    const isActive = (path) => pathname === path;
 
     return<>
     <div className="topbar topbar--two">
@@ -71,33 +76,42 @@ const TopBar = () => {
             <div className="main-header__right">
             <nav className="main-header__nav main-menu">
                 <ul className="main-menu__list">
-                    <li>
-                        <Link href="/">Home</Link>                   
+                    <li className={isActive("/") ? "active" : ""}>
+                        <Link href="/">Home</Link>
                     </li>
-                    <li>
+
+                    <li className={isActive("/about") ? "active" : ""}>
                         <Link href="/about">About</Link>
                     </li>
-                    <li>
+
+                    <li className={isActive("/services") ? "active" : ""}>
                         <Link href="/services">Services</Link>
                     </li>
-                    <li>
+
+                    <li className={isActive("/teams") ? "active" : ""}>
                         <Link href="/teams">Teams</Link>
                     </li>
-                    <li className="dropdown">
+
+                    <li
+                        className={`dropdown ${
+                        pathname.startsWith("/products") ? "active" : ""
+                        }`}
+                    >
                         <a href="#">Products</a>
-                        <ul>                    
-                            <li>
-                                <a href="#">AiHouse</a>
-                            </li>
-                            <li>
-                                <a href="#">CooHom</a>
-                            </li>
-                            <li>
-                                <a href="#">AI Security</a>
-                            </li>
+                        <ul>
+                        <li className={isActive("/products/aihouse") ? "active" : ""}>
+                            <Link href="/products/aihouse">AiHouse</Link>
+                        </li>
+                        <li className={isActive("/products/coohom") ? "active" : ""}>
+                            <Link href="/products/coohom">CooHom</Link>
+                        </li>
+                        <li className={isActive("/products/ai-security") ? "active" : ""}>
+                            <Link href="/products/ai-security">AI Security</Link>
+                        </li>
                         </ul>
                     </li>
-                    <li>
+
+                    <li className={isActive("/contact") ? "active" : ""}>
                         <Link href="/contact">Contacts</Link>
                     </li>
                 </ul>
