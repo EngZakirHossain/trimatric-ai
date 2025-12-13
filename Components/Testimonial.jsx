@@ -13,28 +13,28 @@ const testimonialsData = [
     designation: "CEO, Aigence",
     quote:
       "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form, by injected humor, or randomized words.",
-    image: "/images/team/Azad.webp",
+    image: "/images/logo.png",
   },
   {
     name: "Robert Smith",
     designation: "CEO, Aigence",
     quote:
       "We have big contacts we will promote you i know this is the final release but can we add more features? The hair is just too polarising.",
-    image: "/images/team/Azad.webp",
+    image: "/images/logo.png",
   },
   {
     name: "Martin Jhon",
     designation: "CEO, Aigence",
     quote:
       "I'll know it when I see it. We need more images of groups of people having non-specific types of fun. Make the font bigger.",
-    image: "/images/team/Azad.webp",
+    image: "/images/logo.png",
   },
   {
     name: "Jane Cooper",
     designation: "CEO, Aigence",
     quote:
       "Start on it today and we will talk about what I want next time. Can you lower the price for the website? Make it high quality.",
-    image: "/images/team/Azad.webp",
+    image: "/images/logo.png",
   },
 ];
 

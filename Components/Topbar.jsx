@@ -13,6 +13,10 @@ const TopBar = () => {
 
     const isActive = (path) => pathname === path;
 
+    const productRoutes = ["/ai-house", "/coohom", "/ai-security"];
+
+    const isProductsActive = productRoutes.includes(pathname);
+
     return<>
     <div className="topbar topbar--two">
         <div className="container">
@@ -92,21 +96,17 @@ const TopBar = () => {
                         <Link href="/teams">Teams</Link>
                     </li>
 
-                    <li
-                        className={`dropdown ${
-                        pathname.startsWith("/products") ? "active" : ""
-                        }`}
-                    >
+                    <li className={`dropdown ${isProductsActive ? "active" : ""}`}>
                         <a href="#">Products</a>
                         <ul>
-                        <li className={isActive("/products/aihouse") ? "active" : ""}>
-                            <Link href="/products/aihouse">AiHouse</Link>
+                        <li className={isActive("/ai-house") ? "active" : ""}>
+                            <Link href="/ai-house">AiHouse</Link>
                         </li>
-                        <li className={isActive("/products/coohom") ? "active" : ""}>
-                            <Link href="/products/coohom">CooHom</Link>
+                        <li className={isActive("/coohom") ? "active" : ""}>
+                            <Link href="/coohom">CooHom</Link>
                         </li>
-                        <li className={isActive("/products/ai-security") ? "active" : ""}>
-                            <Link href="/products/ai-security">AI Security</Link>
+                        <li className={isActive("/ai-security") ? "active" : ""}>
+                            <Link href="/ai-security">AI Security</Link>
                         </li>
                         </ul>
                     </li>
