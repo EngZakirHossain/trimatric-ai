@@ -42,7 +42,7 @@ const Services = () => {
 
                   <div className="service-card-two__content">
                     <h3 className="service-card-two__title">
-                      <Link href={`/services/${service.slug}`}>
+                      <Link href="#">
                         {service.title}
                       </Link>
                     </h3>
@@ -62,7 +62,7 @@ const Services = () => {
                       />
 
                       <Link
-                        href={`/services/${service.slug}`}
+                        href="#"
                         className="service-card-two__btn"
                       >
                         <span className="service-card-two__btn__icon">

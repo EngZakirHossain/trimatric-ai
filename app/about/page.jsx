@@ -13,7 +13,7 @@ const About = () => {
                 <div className="about-four__image">
                     <div className="about-four__image__left">
                     <img
-                        src="/images/about/1.webp"
+                        src="/images/about/2.webp"
                         alt="about"
                         className="about-four__image__1"
                     />
@@ -25,21 +25,11 @@ const About = () => {
                     <div className="about-four__circle">
                         <div className="about-four__circle__logo">
                         <img
-                            src="/images/logo.png"
+                            src="/images/favicon.ico"
                             alt="award"
                         />
                         </div>
-                        <div className="curved-circle">
-                        <div
-                            className="curved-circle--item"
-                            data-circle-text-options='{
-                                        "radius": 62,
-                                        "forceWidth": true,
-                                        "forceHeight": true
-                                    }'
-                        >
-                            company award winning
-                        </div>
+                        <div className="curved-circle">                        
                         </div>
                     </div>
                     </div>

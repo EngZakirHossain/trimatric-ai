@@ -11,14 +11,14 @@ import "swiper/css";
 const Project = () => {
     const [projects, setProjects] = useState([]);
     
-        useEffect(() => {
-            const loadProjects = async () => {
-            const res = await fetchFromAPI("/projects");
-            setProjects(res?.data || []);
-            };
-    
-            loadProjects();
-        }, []);
+    useEffect(() => {
+        const loadProjects = async () => {
+        const res = await fetchFromAPI("/projects");
+        setProjects(res?.data || []);
+        };
+
+        loadProjects();
+    }, []);
 
     return (
         <section className="projects-one section-space-2">
