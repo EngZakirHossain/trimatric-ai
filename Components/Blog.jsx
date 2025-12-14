@@ -1,6 +1,7 @@
+import { FaArrowRight } from "react-icons/fa";
 const Blog = () => {
     return <>
-  <section className="blog-one section-space">
+  <section className="blog-one section-space-bottom">
     <div className="container">
       <h2 className="sec-title sec-title--center bw-split-in-left">
         Recent Updates &amp; <br /> Insights from our Blog
@@ -14,7 +15,7 @@ const Blog = () => {
           >
             <div className="blog-card__image">
               <img
-                src="/images/Artboard 3.jpg"
+                src="/images/logo.png"
                 alt="10 Easy Strategies to Harness the Power of AI"
               />
               <a
@@ -30,7 +31,7 @@ const Blog = () => {
               <div className="blog-card__meta list-unstyle">
                 <div className="blog-card__admin">
                   <img
-                    src="/images/team/Mirshad.webp"
+                    src="/images/logo.png"
                     alt="Michale Smith"
                     className="blog-card__admin__image"
                   />
@@ -52,7 +53,7 @@ const Blog = () => {
               </p>
               <a href="blog-details-right.html" className="blog-card__btn">
                 <span className="blog-card__btn__icon">
-                  <i className="icon-right-arrow" />
+                  <FaArrowRight size={30} color="#35a6ed" />
                 </span>
               </a>
             </div>
@@ -66,7 +67,7 @@ const Blog = () => {
           >
             <div className="blog-card__image">
               <img
-                src="/images/Artboard 3.jpg"
+                src="/images/logo.png"
                 alt="10 Easy Strategies to Harness the Power of AI"
               />
               <a
@@ -82,7 +83,7 @@ const Blog = () => {
               <div className="blog-card__meta list-unstyle">
                 <div className="blog-card__admin">
                   <img
-                    src="/images/team/Mirshad.webp"
+                    src="/images/logo.png"
                     alt="Michale Smith"
                     className="blog-card__admin__image"
                   />
@@ -104,7 +105,7 @@ const Blog = () => {
               </p>
               <a href="blog-details-right.html" className="blog-card__btn">
                 <span className="blog-card__btn__icon">
-                  <i className="icon-right-arrow" />
+                  <FaArrowRight size={30} color="#35a6ed" />
                 </span>
               </a>
             </div>
@@ -118,7 +119,7 @@ const Blog = () => {
           >
             <div className="blog-card__image">
               <img
-                src="/images/Artboard 3.jpg"
+                src="/images/logo.png"
                 alt="10 Easy Strategies to Harness the Power of AI"
               />
               <a
@@ -134,7 +135,7 @@ const Blog = () => {
               <div className="blog-card__meta list-unstyle">
                 <div className="blog-card__admin">
                   <img
-                    src="/images/team/Mirshad.webp"
+                    src="/images/logo.png"
                     alt="Michale Smith"
                     className="blog-card__admin__image"
                   />
@@ -156,7 +157,7 @@ const Blog = () => {
               </p>
               <a href="blog-details-right.html" className="blog-card__btn">
                 <span className="blog-card__btn__icon">
-                  <i className="icon-right-arrow" />
+                  <FaArrowRight size={30} color="#35a6ed" />
                 </span>
               </a>
             </div>

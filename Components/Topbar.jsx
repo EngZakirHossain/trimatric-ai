@@ -1,4 +1,22 @@
+'use client';
+import Link from "next/link";
+import { FaFacebookF, FaLinkedin,FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt    } from "react-icons/fa";
+import { useSite } from "@/app/context/SiteContext";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+
 const TopBar = () => {
+    const site = useSite();
+    if (!site) return null;
+
+    const pathname = usePathname();
+
+    const isActive = (path) => pathname === path;
+
+    const productRoutes = ["/ai-house", "/coohom", "/ai-security"];
+
+    const isProductsActive = productRoutes.includes(pathname);
+
     return<>
     <div className="topbar topbar--two">
         <div className="container">
@@ -6,44 +24,41 @@ const TopBar = () => {
             <ul className="list-unstyled topbar__info">
             <li>
                 <span className="topbar__info__icon">
-                <i className="icon-location" />
+                <FaMapMarkerAlt  size={24} color="#35a6ed" title="Address" />
                 </span>
                 <span>
                 <a href="https://www.google.com/maps">
-                    125 Ramna Century Avenue, Boro Moghbazar, Dhaka-1217 Bangladesh
+                    {site.address}
                 </a>
                 </span>
             </li>
             <li>
                 <span className="topbar__info__icon">
-                <i className="icon-email" />
+                    <FaEnvelope  size={24} color="#35a6ed" title="Email" />
                 </span>
                 <span>
-                <a href="mailto:info@trimatric.ai">info@trimatric.ai</a>
+                <a href={`mailto:${site.email}`}>{site.email}</a>
                 </span>
             </li>
             <li>
                 <span className="topbar__info__icon">
-                <i className="icon-phone" />
+                <FaPhone  size={24} color="#35a6ed" title="Phone" />
                 </span>
                 <span>
-                <a href="tel:+880 1886-636200">+880 1886-636200</a>
+                <a href={`tel:${site.phone}`}>{site.phone}</a>
                 </span>
             </li>
             </ul>
-            <div className="topbar__social">
-            <a href="https://www.facebook.com/trimatricai">
-                <i className="icon-facebook" aria-hidden="true" />
-                <span className="sr-only">Facebook</span>
-            </a>           
-            <a href="https://www.linkedin.com/company/trimatric-ai">
-                <i className="icon-pinterest" aria-hidden="true" />
-                <span className="sr-only">LinkedIn</span>
-            </a>
-            <a href="https://www.youtube.com/@TrimatricAI">
-                <i className="icon-youtube" aria-hidden="true" />
-                <span className="sr-only">Youtube</span>
-            </a>
+            <div className="topbar__social flex gap-3">
+                <a href={site.fb_link} target="_blank" rel="noopener noreferrer">
+                    <FaFacebookF size={20} color="#1877F2" />
+                </a>
+                <a href={site.linkedin_link} target="_blank" rel="noopener noreferrer">
+                    <FaLinkedin size={20} color="#0077B5" />
+                </a>
+                <a href={site.youtube_link} target="_blank" rel="noopener noreferrer">
+                    <FaYoutube size={20} color="#FF0000" />
+                </a>
             </div>
         </div>
         </div>
@@ -52,277 +67,53 @@ const TopBar = () => {
         <div className="main-header__container container">
         <div className="main-header__inner">
             <div className="main-header__logo logo-retina">
-            <a href="index.html">
-                <img
-                src="/images/logo.png"
-                alt="Aigence HTML"
-                width={150}
+            <Link href="/">
+                <Image
+                    src={site?.logo || "images/logo.png"}
+                    alt={site?.name || "Trimatric AI"}
+                    width={150}
+                    height={50}
+                    unoptimized
                 />
-            </a>
+            </Link>
             </div>
             <div className="main-header__right">
             <nav className="main-header__nav main-menu">
                 <ul className="main-menu__list">
-                <li className="dropdown megamenu">
-                    <a href="index.html">Home</a>                   
-                </li>
-                <li>
-                    <a href="about.html">About</a>
-                </li>
-                <li className="dropdown">
-                    <a href="#">Pages</a>
-                    <ul>
-                    <li className="dropdown">
-                        <a href="#">Our Team</a>
-                        <ul>
-                        <li>
-                            <a href="team.html">Our Team</a>
-                        </li>
-                        <li>
-                            <a href="team-carousel.html">Team Carousel</a>
-                        </li>
-                        <li>
-                            <a href="team-details.html">Team Details</a>
-                        </li>
-                        </ul>
+                    <li className={isActive("/") ? "active" : ""}>
+                        <Link href="/">Home</Link>
                     </li>
-                    <li className="dropdown">
-                        <a href="#">Our Projects</a>
-                        <ul>
-                        <li>
-                            <a href="projects.html">Our Projects</a>
-                        </li>
-                        <li>
-                            <a href="projects-carousel.html">Projects Carousel</a>
-                        </li>
-                        <li>
-                            <a href="project-details.html">Project Details</a>
-                        </li>
-                        </ul>
+
+                    <li className={isActive("/about") ? "active" : ""}>
+                        <Link href="/about">About</Link>
                     </li>
-                    <li className="dropdown">
-                        <a href="#">Our Testimonials</a>
-                        <ul>
-                        <li>
-                            <a href="testimonials.html">Our Testimonials 01</a>
-                        </li>
-                        <li>
-                            <a href="testimonials-2.html">Our Testimonials 02</a>
-                        </li>
-                        <li>
-                            <a href="testimonials-3.html">Our Testimonials 03</a>
-                        </li>
-                        <li>
-                            <a href="testimonials-carousel.html">
-                            Testimonials Carousel 01
-                            </a>
-                        </li>
-                        <li>
-                            <a href="testimonials-carousel-2.html">
-                            Testimonials Carousel 02
-                            </a>
-                        </li>
-                        <li>
-                            <a href="testimonials-carousel-3.html">
-                            Testimonials Carousel 03
-                            </a>
-                        </li>
-                        </ul>
+
+                    <li className={isActive("/services") ? "active" : ""}>
+                        <Link href="/services">Services</Link>
                     </li>
-                    <li className="dropdown">
-                        <a href="#">Gallery</a>
-                        <ul>
-                        <li>
-                            <a href="gallery.html">Gallery masonry</a>
-                        </li>
-                        <li>
-                            <a href="gallery-filter.html">Gallery filter</a>
-                        </li>
-                        <li>
-                            <a href="gallery-grid.html">Gallery Grid</a>
-                        </li>
-                        <li>
-                            <a href="gallery-carousel.html">Gallery Carousel</a>
-                        </li>
-                        </ul>
+
+                    <li className={isActive("/teams") ? "active" : ""}>
+                        <Link href="/teams">Teams</Link>
                     </li>
-                    <li>
-                        <a href="faq.html">FAQS</a>
-                    </li>
-                    <li>
-                        <a href="404.html">404 Error</a>
-                    </li>
-                    </ul>
-                </li>
-                <li className="dropdown">
-                    <a href="#">Services</a>
-                    <ul>
-                    <li className="dropdown">
-                        <a href="#">Services Grid</a>
-                        <ul>
-                        <li>
-                            <a href="services.html">Services Grid 01</a>
-                        </li>
-                        <li>
-                            <a href="services-2.html">Services Grid 02</a>
-                        </li>
-                        <li>
-                            <a href="services-3.html">Services Grid 03</a>
-                        </li>
-                        </ul>
-                    </li>
-                    <li className="dropdown">
-                        <a href="#">Services Carousel</a>
-                        <ul>
-                        <li>
-                            <a href="services-carousel.html">
-                            Services Carousel 01
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services-carousel-2.html">
-                            Services Carousel 02
-                            </a>
-                        </li>
-                        <li>
-                            <a href="services-carousel-3.html">
-                            Services Carousel 03
-                            </a>
-                        </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="service-d-ai-data-analytics.html">
-                        AI-Data Analytics
-                        </a>
-                    </li>
-                    <li>
-                        <a href="service-d-ai-development.html">AI-Development</a>
-                    </li>
-                    <li>
-                        <a href="service-d-ai-design-mystery.html">
-                        AI-Design Mystery
-                        </a>
-                    </li>
-                    <li>
-                        <a href="service-d-ai-integration.html">AI-Integration</a>
-                    </li>
-                    <li>
-                        <a href="service-d-ai-chatbots.html">AI-Chatbots</a>
-                    </li>
-                    <li>
-                        <a href="service-d-ai-driven-automation.html">
-                        AI-Driven Automation
-                        </a>
-                    </li>
-                    </ul>
-                </li>
-                <li className="dropdown">
-                    <a href="#">Shop</a>
-                    <ul>
-                    <li className="dropdown">
+
+                    <li className={`dropdown ${isProductsActive ? "active" : ""}`}>
                         <a href="#">Products</a>
                         <ul>
-                        <li>
-                            <a href="products.html">No sidebar</a>
+                        <li className={isActive("/ai-house") ? "active" : ""}>
+                            <Link href="/ai-house">AiHouse</Link>
                         </li>
-                        <li>
-                            <a href="products-left.html">Left sidebar</a>
+                        <li className={isActive("/coohom") ? "active" : ""}>
+                            <Link href="/coohom">CooHom</Link>
                         </li>
-                        <li>
-                            <a href="products-right.html">Right sidebar</a>
-                        </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="products-carousel.html">Products carousel</a>
-                    </li>
-                    <li>
-                        <a href="product-details.html">Product details</a>
-                    </li>
-                    <li>
-                        <a href="cart.html">Cart</a>
-                    </li>
-                    <li>
-                        <a href="checkout.html">Checkout</a>
-                    </li>
-                    </ul>
-                </li>
-                <li className="dropdown">
-                    <a href="#">Blog</a>
-                    <ul>
-                    <li className="dropdown">
-                        <a href="#">Blog grid 01</a>
-                        <ul>
-                        <li>
-                            <a href="blog-grid.html">No sidebar</a>
-                        </li>
-                        <li>
-                            <a href="blog-grid-left.html">Left sidebar</a>
-                        </li>
-                        <li>
-                            <a href="blog-grid-right.html">Right sidebar</a>
+                        <li className={isActive("/ai-security") ? "active" : ""}>
+                            <Link href="/ai-security">AI Security</Link>
                         </li>
                         </ul>
                     </li>
-                    <li className="dropdown">
-                        <a href="#">Blog grid 02</a>
-                        <ul>
-                        <li>
-                            <a href="blog-grid-2.html">No sidebar</a>
-                        </li>
-                        <li>
-                            <a href="blog-grid-2-left.html">Left sidebar</a>
-                        </li>
-                        <li>
-                            <a href="blog-grid-2-right.html">Right sidebar</a>
-                        </li>
-                        </ul>
+
+                    <li className={isActive("/contact") ? "active" : ""}>
+                        <Link href="/contact">Contacts</Link>
                     </li>
-                    <li className="dropdown">
-                        <a href="#">Blog list</a>
-                        <ul>
-                        <li>
-                            <a href="blog-list.html">No sidebar</a>
-                        </li>
-                        <li>
-                            <a href="blog-list-left.html">Left sidebar</a>
-                        </li>
-                        <li>
-                            <a href="blog-list-right.html">Right sidebar</a>
-                        </li>
-                        </ul>
-                    </li>
-                    <li className="dropdown">
-                        <a href="#">Blog carousel</a>
-                        <ul>
-                        <li>
-                            <a href="blog-carousel.html">Blog carousel 01</a>
-                        </li>
-                        <li>
-                            <a href="blog-carousel-2.html">Blog carousel 02</a>
-                        </li>
-                        </ul>
-                    </li>
-                    <li className="dropdown">
-                        <a href="#">Blog details</a>
-                        <ul>
-                        <li>
-                            <a href="blog-details.html">No sidebar</a>
-                        </li>
-                        <li>
-                            <a href="blog-details-left.html">Left sidebar</a>
-                        </li>
-                        <li>
-                            <a href="blog-details-right.html">Right sidebar</a>
-                        </li>
-                        </ul>
-                    </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
                 </ul>
             </nav>
             <div className="mobile-nav__btn mobile-nav__toggler">
@@ -331,9 +122,9 @@ const TopBar = () => {
                 <span />
             </div>
             <div className="main-header__btn">
-                <a href="contact.html" className="aigence-btn">
+                <Link href="/contact" className="aigence-btn">
                     <span className="aigence-btn__text">Get in Touch</span>
-                </a>
+                </Link>
             </div>            
             </div>
         </div>

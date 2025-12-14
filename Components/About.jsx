@@ -1,3 +1,5 @@
+import { FaLaptopCode, FaUsers, FaPlay , FaBrain ,FaVideo  } from "react-icons/fa";
+
 const About = () => {
 
     return <>
@@ -7,7 +9,7 @@ const About = () => {
                 <div className="col-xxl-8 col-xl-7">
                 <div className="about-two__content">
                     <h2 className="sec-title bw-split-in-left">
-                    TRIMATRIC AI is a forward-thinking technology company developing cutting-edge AI-based software and solutions.
+                        Highlight the potential benefits of Neural Networks, such as improved decision-making, predictive analytics, and automation.
                     </h2>
                     <div className="about-two__item-grid">
                     <div
@@ -17,7 +19,7 @@ const About = () => {
                     >
                         <div className="about-two__item__top">
                         <span className="about-two__item__icon">
-                            <i className="icon-technology" />
+                            <FaLaptopCode size={30} color="#007bff" />
                         </span>
                         <h4 className="about-two__item__title">
                             Versatile <br /> intelligent automation
@@ -35,7 +37,7 @@ const About = () => {
                     >
                         <div className="about-two__item__top">
                         <span className="about-two__item__icon about-two__item__icon--2">
-                            <i className="icon-people" />
+                            <FaUsers size={30} color="#007bff" />
                         </span>
                         <h4 className="about-two__item__title">
                             Professional <br /> Team Members
@@ -55,7 +57,7 @@ const About = () => {
                 >
                 <div className="about-two__image">
                     <div className="about-two__image__one">
-                    <img src="/images/Artboard 3.jpg" alt="about" />
+                    <img src="/images/about.jpg" alt="about" />
                     </div>                    
                 </div>
                 </div>
@@ -83,7 +85,7 @@ const About = () => {
                 </h4>
                 <div className="about-one__item__bottom">
                     <span className="about-one__item__icon">
-                    <i className="icon-ai-chip" />
+                    <FaBrain size={30} color="#007bff" />
                     </span>
                     <p className="about-one__item__text">
                         We specialize in the development of advanced AI-driven software solutions tailored to meet the specific needs of businesses and industries.
@@ -99,7 +101,7 @@ const About = () => {
                 </h4>
                 <div className="about-one__item__bottom">
                     <span className="about-one__item__icon">
-                    <i className="icon-ai-face" />
+                    <FaVideo size={30} color="#007bff" />
                     </span>
                     <p className="about-one__item__text">
                         We offer comprehensive Software Design & Development services, delivering customized solutions that meet the unique needs of businesses across.
@@ -121,10 +123,10 @@ const About = () => {
             />
             <div className="about-one__video__content">
                 <a
-                href="https://www.youtube.com/embed/p7ZC693WJ5Q"
+                href="https://www.youtube.com/embed/p7ZC693WJ5Q" target="_bank"
                 className="about-one__video__btn video-popup"
                 >
-                <i className="fas fa-play" />
+                <FaPlay  size={30} color="#FFFFFF" />
                 </a>
             </div>
             <div className="about-one__experience">
