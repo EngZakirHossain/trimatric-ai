@@ -6,7 +6,7 @@ import { Autoplay, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/autoplay";
-import Clients from "@/components/Clients";
+import Clients from "@/Components/Clients";
 import Link from "next/link";
 import { fetchFromAPI } from "@/lib/api";
 import Image from "next/image";
