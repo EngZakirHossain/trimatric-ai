@@ -1,7 +1,7 @@
 "use client";
 import { useSite } from "@/app/context/SiteContext";
 import HeaderBreadcrumb from "@/Components/HeaderBreadcrumb";
-import Clients from "@/components/Clients";
+import Clients from "@/Components/Clients";
 import { FaArrowRight, FaPhone, FaEnvelope, FaMapMarkerAlt,FaClock } from "react-icons/fa";
 import { useState } from "react";
 import { contactAction } from "./contact.action";

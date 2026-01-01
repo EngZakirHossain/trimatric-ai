@@ -1,7 +1,7 @@
 import HeaderBreadcrumb from "@/Components/HeaderBreadcrumb";
-import Clients from "@/components/Clients";
-import Team from "@/components/Team";
-import Testimonial from "@/components/Testimonial";
+import Clients from "@/Components/Clients";
+import Team from "@/Components/Team";
+import Testimonial from "@/Components/Testimonial";
 import { FaBullseye, FaEye} from "react-icons/fa";
 const About = () => {
     return <>
