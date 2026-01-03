@@ -5,8 +5,9 @@ import { useEffect, useState } from "react";
 import { fetchFromAPI } from "@/lib/api";
 import Image from "next/image";
 import Link from "next/link";
+import HeaderBreadcrumb from "@/Components/HeaderBreadcrumb";
 
-const Blog = () => {
+const BlogList = () => {
     const [blogs, setBlogs] = useState([]);
   
     useEffect(() => {
@@ -19,10 +20,10 @@ const Blog = () => {
     }, []);
 
     return <>
-      <section className="blog-one section-space-bottom">
+    <HeaderBreadcrumb pageTitle="Blogs" />
+     <section className="blog-one section-space-bottom">
         <div className="container">
           <h2 className="sec-title sec-title--center bw-split-in-left">
-            Recent Blogs
           </h2>
           <div className="row gutter-y-30">
             {blogs.map((blog) => (
@@ -34,7 +35,7 @@ const Blog = () => {
                 >
                   <div className="blog-card__image">
                     <Image src={blog.feature_image} width={400} height={300} alt={blog.title} unoptimized />
-                    <Link href={`/blog/${blog.slug}`} className="blog-card__image__link">
+                    <Link href={`/blogs/${blog.slug}`} className="blog-card__image__link">
                       <span className="sr-only">{blog.title}</span>
                     </Link>
                   </div>
@@ -57,10 +58,10 @@ const Blog = () => {
                       </div>
                     </div>
                     <h3 className="blog-card__title">
-                      <Link href={`/blog/${blog.slug}`}>{blog.title}</Link>
+                      <Link href={`/blogs/${blog.slug}`}>{blog.title}</Link>
                     </h3>
                     <p className="blog-card__text">{blog.category_name}</p>
-                    <Link href={`/blog/${blog.slug}`} className="blog-card__btn">
+                    <Link href={`/blogs/${blog.slug}`} className="blog-card__btn">
                       <span className="blog-card__btn__icon">
                         <FaArrowRight size={30} color="#35a6ed" />
                       </span>
@@ -75,4 +76,4 @@ const Blog = () => {
     </>
 
 } 
-export default Blog;
+export default BlogList;
