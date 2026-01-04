@@ -57,7 +57,9 @@ const Blog = () => {
                       </div>
                     </div>
                     <h3 className="blog-card__title">
-                      <Link href={`/blog/${blog.slug}`}>{blog.title}</Link>
+                      <Link href={`/blog/${blog.slug}`}>
+                      {blog.title.length > 60 ? blog.title.substring(0, 60) + "..." : blog.title}
+                      </Link>
                     </h3>
                     <p className="blog-card__text">{blog.category_name}</p>
                     <Link href={`/blog/${blog.slug}`} className="blog-card__btn">
